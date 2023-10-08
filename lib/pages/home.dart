@@ -25,68 +25,68 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Text(
-                    'Category',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 120,
-                  child: ListView.separated(
-                    itemCount: categories.length,
-                    scrollDirection: Axis.horizontal,
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 25,
-                    ),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: screenWidth / categories.length,
-                        decoration: BoxDecoration(
-                            color: categories[index].boxColor.withOpacity(0.3),
-                            borderRadius: BorderRadius.circular(16)),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    shape: BoxShape.circle),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: SvgPicture.asset(
-                                      categories[index].iconPath),
-                                ),
-                              ),
-                              Text(
-                                categories[index].name,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
-                                    fontSize: 14),
-                              )
-                            ]),
-                      );
-                    },
-                  ),
-                )
-              ],
-            )
+            _categoriesSection(screenWidth)
           ],
         ));
+  }
+
+  Column _categoriesSection(double screenWidth) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Text(
+            'Category',
+            style: TextStyle(
+                color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Container(
+          height: 120,
+          child: ListView.separated(
+            itemCount: categories.length,
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => SizedBox(
+              width: 25,
+            ),
+            itemBuilder: (context, index) {
+              return Container(
+                width: screenWidth / categories.length,
+                decoration: BoxDecoration(
+                    color: categories[index].boxColor.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(16)),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.white, shape: BoxShape.circle),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(categories[index].iconPath),
+                        ),
+                      ),
+                      Text(
+                        categories[index].name,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                            fontSize: 14),
+                      )
+                    ]),
+              );
+            },
+          ),
+        )
+      ],
+    );
   }
 
   Container _searchField() {
