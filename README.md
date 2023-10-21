@@ -2,6 +2,8 @@
 
 Welcome to the Fitness Landpage App, a Flutter-based mobile application showcasing a fitness landing page. This project is designed to help you learn and practice front-end development with Flutter. It's intended for mobile devices, so when opening it, please make sure to inspect it as a mobile view from your browser's developer tools.
 
+<img src="https://github.com/Jamal-SaadEddin/Fitness/assets/104212352/744b5a3e-600c-4e8e-a73d-10ed4664ee93" width="235" height="500" alt=".">
+
 ## Project Overview
 
 This mobile app is a simple fitness landing page designed to provide fitness enthusiasts with essential information about the fitness application. It demonstrates the use of Flutter for creating an engaging and responsive user interface for mobile devices.
